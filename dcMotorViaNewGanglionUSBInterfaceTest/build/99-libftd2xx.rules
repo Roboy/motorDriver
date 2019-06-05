@@ -1,0 +1,15 @@
+# allow users to claim the device
+# VID/PID see: http://www.ftdichip.com/Support/Documents/TechnicalNotes/TN_100_USB_VID-PID_Guidelines.pdf
+
+# FT232BM/L/Q, FT245BM/L/Q, VNC1L with VDPS Firmware, VNC2 with FT232Slave
+# SUBSYSTEM=="usb", ATTRS{idVendor}=="0403", ATTRS{idProduct}=="6001", MODE="0664", GROUP="plugdev", RUN+="/sbin/rmmod ftdi_sio usbserial"
+
+# FT2232C/D/L, FT2232HL/Q
+# SUBSYSTEM=="usb", ATTRS{idVendor}=="0403", ATTRS{idProduct}=="6010", MODE="0664", GROUP="plugdev", RUN+="/sbin/rmmod ftdi_sio usbserial"
+
+# FT4232HL/Q
+# SUBSYSTEM=="usb", ATTRS{idVendor}=="0403", ATTRS{idProduct}=="6011", MODE="0664", GROUP="plugdev", RUN+="/sbin/rmmod ftdi_sio usbserial"
+
+# FT232HL/Q
+SUBSYSTEM=="usb", ATTRS{idVendor}=="0403", ATTRS{idProduct}=="6014", MODE="0664", GROUP="plugdev", RUN+="/etc/udev/rules.d/99-libftd2xx-startwaitbeforeunload.sh"
+

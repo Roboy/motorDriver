@@ -1,0 +1,37 @@
+#configGripperDriver.txt
+
+
+#unsigned short ControlMode; //input 0xFFFF: extern (SPI driven),default
+#                                  //       1: local position
+#                                  //       2: local velocity
+#                                  //       3: local current
+2
+
+
+#unsigned short cycleTimeIn100usIncrements; //only valid when local control has been selected
+2010
+                                          
+#float PGain;
+2.2
+#float IGain;
+4.4
+#float DGain;
+-2.5
+#float positiveSaturation in % (of controller output pulse width)
+40
+#float negativeSaturation in % (of controller output pulse width)
+66
+#float integrator Saturation in control units * time (positive and negative saturation are symetric)
+432165.0
+#float conversion factor from ADC value of current sensor to mA
+806E-6
+#EncoderCountsPerRevolution;
+444
+# unsigned short referenceValueMessageId; (provide in hex, e.g. 0x120)
+0x420
+#unsigned short actualValueMessageId; /(provide in hex, e.g. 0x121)
+0x422
+#unsigned short pidGainsMessageId;//(provide in hex, e.g. 0x122)
+0x434
+#unsigned short nodeID
+8

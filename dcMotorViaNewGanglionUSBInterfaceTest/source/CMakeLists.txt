@@ -1,0 +1,29 @@
+
+PROJECT(flexRayUSBInterfaceTest)
+
+
+FIND_PACKAGE(Qt4 REQUIRED)
+
+
+INCLUDE(${QT_USE_FILE})
+ADD_DEFINITIONS(${QT_DEFINITIONS})
+
+#INCLUDE_DIRECTORIES(../include)
+#INCLUDE_DIRECTORIES(../classes)
+
+
+SET(PROJECT_HEADERS     UserInterface.h FlexRayUSBInterface.h)
+SET(PROJECT_SOURCES   main.cpp       FlexRayUSBInterface.cpp )
+QT4_WRAP_CPP(QTGENERATED_HEADERS_MOC UserInterface.h FlexRayUSBInterface.h)
+
+message(STATUS "MOC FILES ARE: ${QTGENERATED_HEADERS_MOC}")
+
+ADD_EXECUTABLE(flexRayUSBInterfaceTest ${PROJECT_SOURCES} ${PROJECT_HEADERS}  ${QTGENERATED_HEADERS_MOC}  )
+
+#include the Kvaser CAN library
+TARGET_LINK_LIBRARIES(flexRayUSBInterfaceTest ftd2xx )
+TARGET_LINK_LIBRARIES(flexRayUSBInterfaceTest ${QT_LIBRARIES})
+
+
+
+

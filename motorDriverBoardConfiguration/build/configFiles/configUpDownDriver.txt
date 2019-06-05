@@ -1,0 +1,37 @@
+#configUpDownDriver.txt
+
+
+#unsigned short ControlMode; //input 0xFFFF: extern (SPI driven),default
+#                                  //       1: local position
+#                                  //       2: local velocity
+#                                  //       3: local current
+2
+
+
+#unsigned short cycleTimeIn100usIncrements; //only valid when local control has been selected
+54
+                                          
+#float PGain;
+40.0
+#float IGain;
+0.0
+#float DGain;
+0.0
+#float positiveSaturation in % (of controller output pulse width)
+40
+#float negativeSaturation in % (of controller output pulse width)
+40
+#float integrator Saturation in control units * time (positive and negative saturation are symetric)
+432165.0
+#float conversion factor from ADC value of current sensor to mA
+806E-6
+#EncoderCountsPerRevolution, supply negative value if encoder rotation and motor rotation are out-of-phase.
+2000
+# unsigned short referenceValueMessageId; message Format: 4byte position, 2byte velocity, 2byte current
+0x110
+#unsigned short actualValueMessageId; //message Format: 4byte int position, 2byte int velocity, 2byte int current
+0x120
+#unsigned short pidGainsMessageId;
+0x130
+#unsigned short nodeID
+0

@@ -1,0 +1,27 @@
+#configUpDownDriver.txt
+
+
+#unsigned short ControlMode; //input 0xFFFF: extern (SPI driven),default
+#                                  //       1: local position
+#                                  //       2: local velocity
+#                                  //       3: local current
+2
+
+
+#unsigned short cycleTimeIn100usIncrements; //only valid when local control has been selected
+2000
+                                          
+#float PGain;
+1.2
+#float IGain;
+4.4
+#float DGain;
+-2.5
+#EncoderCountsPerRevolution;
+345
+# unsigned short referenceValueMessageId; message Format: 4byte position, 2byte velocity, 2byte current
+0x120
+#unsigned short actualValueMessageId; //message Format: 4byte int position, 2byte int velocity, 2byte int current
+0x122
+#unsigned short pidGainsMessageId;
+0x234

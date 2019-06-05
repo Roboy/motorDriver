@@ -1,0 +1,3 @@
+/home/roboy/workspace/motorDriver/dcMotorUARTConfiguration/build/CMakeFiles/edit_cache.dir
+/home/roboy/workspace/motorDriver/dcMotorUARTConfiguration/build/CMakeFiles/uartMotorConfiguration.dir
+/home/roboy/workspace/motorDriver/dcMotorUARTConfiguration/build/CMakeFiles/rebuild_cache.dir

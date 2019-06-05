@@ -1,0 +1,39 @@
+#openLoopDriver.txt
+
+
+#unsigned short ControlMode; //input 0xFFFF (-1): extern (SPI driven),default
+#in SPI mode only the encoder counts per revolution and the nodeID are required
+#                                   //      0: open loop
+#                                  //       1: local position
+#                                  //       2: local velocity
+#                                  //       3: local current
+0
+
+
+#unsigned short cycleTimeIn100usIncrements; //only valid when local control has been selected, e.g. 50 is 5 milli seconds
+30
+                                          
+#float PGain;
+1
+#float IGain;
+1
+#float DGain;
+1
+#float positiveSaturation in % (of controller output pulse width)
+25.0
+#float negativeSaturation in % (of controller output pulse width)
+0.01
+#float integrator Saturation in (control-units * time) (positive and negative saturation are symetric)
+1
+#float conversion factor from ADC value of current sensor to mA
+806E-3
+#EncoderCountsPerRevolution, supply negative value if encoder rotation and motor rotation are out-of-phase.
+4000
+# unsigned short referenceValueMessageId; message Format: 4byte float reference value in rad, rad/s or mA
+0x115
+#unsigned short actualValueMessageId; //message Format: 4byte float actual value, 4byte int position (encoder counts)
+0x125
+#unsigned short pidGainsMessageId;
+0x135
+#unsigned short nodeID
+1

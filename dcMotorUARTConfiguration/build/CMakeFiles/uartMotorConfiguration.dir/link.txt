@@ -1,0 +1,1 @@
+/usr/bin/c++      CMakeFiles/uartMotorConfiguration.dir/main.o CMakeFiles/uartMotorConfiguration.dir/configDataHandling.o CMakeFiles/uartMotorConfiguration.dir/SerialCommunication.o CMakeFiles/uartMotorConfiguration.dir/moc_configDataHandling.o CMakeFiles/uartMotorConfiguration.dir/moc_SerialCommunication.o  -o uartMotorConfiguration -rdynamic -lQtGui -lQtCore -lserial 
